@@ -1,0 +1,343 @@
+html{
+    scroll-behavior: smooth;
+}
+
+/*Selectores basicos*/
+
+.bg-steelblue{
+    color: steelblue;
+}
+
+.bg-skyblue{
+    background-color: skyblue;
+}
+
+p{
+    color: midnightblue;
+}
+
+#parrafo-2{
+    color: skyblue;
+}
+
+.text-20{
+    font-size: 20px;
+}
+
+.text-32{
+    font-size: 32px;
+}
+
+.text-white{
+    color: white;
+}
+
+.title{
+    color: bisque;
+    background-color: #000;
+    text-align: center;
+    font-weight: lighter;
+    border: brown solid 2px;
+}
+
+/*Selectores avanzados*/
+
+.hijos-directos > li{
+    background-color: thistle;
+}
+
+.hijos-descendientes b{
+    background-color: teal;
+}
+
+
+/*Los selectores hermanos van aaplicar a los elementos que son hermanos
+y que esten por debajo del elemento seleccionado*/
+.hermanos-general ~ li{
+    background-color: tomato;
+}
+
+.hermanos-adyacentes + li{
+    background-color: violet;
+}
+
+/*Selectores de atributos*/
+
+.selectores-atributos a[href]{
+    color: orangered;
+    /*font-weight: bold;*/
+}
+
+.selectores-atributos a[target="_blank"]{
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/*El comodin del * aplica el estilo si contiene la palabra en cuestion*/
+.selectores-atributos a[href*="google"]{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*El comodin del ^ aplica el estilo si contiene el texto en cuestion al principio*/
+.selectores-atributos a[href^="https"]{
+    text-decoration: none;
+}
+
+/*El comodin del $ aplica el estilo si contiene el texto en cuestion al final*/
+.selectores-atributos a[href$="co"]{
+    background-color: #000;
+}
+
+/*El comodin del ~ aplica el estilo si contiene el texto en cuestion en una lista separada
+por espacios*/
+.selectores-atributos a[class~="cursos"]{
+    background-color: midnightblue;
+}
+
+/*El comodin del | aplica el estilo si contiene el texto en cuestion al final*/
+.selectores-atributos a[class|="menu"]{
+    font-style: italic;
+    text-decoration: none;
+}
+
+/*Selector universal*/
+*{
+    font-family: sans-serif;
+}
+
+.selector-universal *{
+    font-size: 24px;
+}
+
+/*Pseudoclases*/
+
+.form-pseudoclases *:required{
+    border-color: blue;
+}
+
+.form-pseudoclases *:valid{
+    border-color: green;
+}
+
+.form-pseudoclases *:invalid{
+    border-color: red;
+}
+
+.form-pseudoclases *:disabled{
+    background-color: pink;
+}
+
+.menu-pseudoclases a:visited{
+    color: peru;
+}
+
+.menu-pseudoclases a:hover{
+    color: red;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.p-pseudoclases:hover{
+    font-size: 18px;
+    color: indigo;
+    font-family: cursive;
+}
+
+#temario-css:target{
+    background-color: greenyellow;
+}
+
+#selectores-basicos:target{
+    background-color: greenyellow;
+}
+
+.lista-pseudoclases li:first-child{
+    color: green;
+}
+
+.lista-pseudoclases li:last-child{
+    color: violet;
+}
+
+.lista-pseudoclases li:nth-child(4){
+    color: cyan;
+    background-color: lightslategray;
+}
+
+.lista-pseudoclases li:nth-child(4n){
+    color: red;
+    /*background-color: lightslategray;
+    font-style: italic;*/
+}
+
+.lista-pseudoclases li:nth-child(3n){
+    color: blue;
+    background-color: lightslategray;
+    font-style: bold;
+}
+
+.lista-pseudoclases li:nth-child(3n + 1){
+    color: blue;
+    /*background-color: lightslategray;*/
+    font-style: bold;
+}
+
+
+/*pares(even)*/
+.lista-pseudoclases li:nth-child(even){
+    background-color: yellow;
+}
+
+/*impares(odd)*/
+.lista-pseudoclases li:nth-child(odd){
+    background-color: orange;
+}
+
+/*first-of-type(primero de su tipo)*/
+.articulo-pseudoclases p:first-of-type{
+    background-color: orangered;
+}
+
+
+/*last-of-type(ultimo en su tipo)*/
+.articulo-pseudoclases p:last-of-type{
+    background-color: orange;
+}
+
+/*nth se utiliza para escoger de entre los elementos*/
+.articulo-pseudoclases p:nth-of-type(3){
+    background-color: orangered;
+}
+
+.articulo-pseudoclases *:not(p){
+    background-color: beige;
+}
+
+/*Pseudoelementos - Dan estilo a partes especificas de un elemento se usa :: para diferenciarlos
+de las pseudoclases*/
+
+.saga-geminis::before{
+    content: "Hola ";
+}
+
+.saga-precio::before{
+    content: "$";
+    font-weight: bold;
+}
+
+.saga-precio::after{
+    content: "USD";
+    font-weight: bold;
+}
+
+/*Colocar la primera letra del parrafo de mayor tamanio*/
+.p-seudoelelementos::first-letter{
+    font-weight: bold;
+    font-size: 32px;
+}
+
+
+/*Cambiar la primera linea del parrafo*/
+.p-seudoelelementos::first-line{
+    color: brown;
+}
+
+/*Al seleccionar se cambia a el estilo establecido*/
+.p-seudoelelementos::selection{
+    color: chartreuse;
+    background-color: #000;
+}
+
+.input-pseudoelementos::placeholder{
+    color: cornflowerblue;
+}
+
+/*Agrupar selectores*/
+
+.form-agrupar-selectores input[type="text"],
+.form-agrupar-selectores input[type="email"],
+.form-agrupar-selectores textarea{
+    border-color: aqua;
+    border-style: dashed;
+    border-width: 2px;
+    background-color: #000;
+    font-size: 20px;
+    display: block;
+    width: 300px;
+}
+
+/*El algoritmo de CSS -> Es la forma en que el navegador aplica los estilos al documento HTML.
+Es vital entender este concepto para que entiendas como se aplican y en algunos casos como se
+sobreescriben las reglas CSS
+
+1)La Cascada
+2)La Especifidad
+3)La Herencia
+
+La Cascada es el mecanismo en que el navegador aplica los estilos. Y toma en cuenta lo siguiente
+en este orden:
+    1)EL origen del codigo
+        -El User Agent(los estilos por defecto del navegador)
+        -Personalizaciones del usuario
+        -Los estilos del autor
+    2)La especifidad del selector
+    3)Orden de aparicion
+
+La Especificidad es el peso que tiene un selector cuando hay conflicto de estilos. Se calcula de la sgte
+forma:
+    Etiquetas y pseudoelementos-------------0,0,0,1
+    Clases, atributos y pseudoclases--------0,0,1,0
+    Identificadores-------------------------0,1,0,0
+    Estilos en linea------------------------1,0,0,0
+    !important---------------Rompe la especificidad
+*/
+
+blockquote#cita-marco.cita-marco{
+    background-color: darkolivegreen;
+}
+
+blockquote#cita-marco{
+    background-color: darkgrey;
+}
+
+blockquote.cita-marco{
+    background-color: cornsilk;
+}
+
+#cita-marco{
+    background-color: coral;
+}
+
+.cita-marco{
+    background-color: cadetblue;
+}
+
+blockquote{
+    background-color: burlywood !important;
+    font-size: 20px; 
+}
+
+
+/*La Herencia Es la capacidad de un selector de obtener(heredar) los valores de sus
+ancestros mas cercanos, para aplicarla se utiliza el valor inherit, si queremos evitarla
+podemos asignar otro valor o inicializar la propiedad con el valor initial*/
+
+.cita-marco cite{
+    background-color: darkorchid;
+    background-color: inherit;
+}
+
+/*Normalizacion y reseteo*/
+
+.parrafo-reset{
+    background-color: rgb(215, 218, 202);
+    color: rgb(5, 56, 54);
+    font-family: cursive;
+}
+
+/*Prefijos de los navegadores
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;*/
+
